@@ -1,1 +1,122 @@
 /* Note there a few "reset" styles given in reset.css. Review those before you begin */
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: 0;
+  opacity: 0.01;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 2.3em;
+  font-size: 1.05em;
+  line-height: 1.7;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid var(--checkbox-border-color);
+  background: var(--color-white);
+  border-radius: 0.2em;
+  box-shadow: inset 0 1px 3px var(--checkbox-box-shadow-left),
+    0 0 0 var(--checkbox-box-shadow-right);
+  -webkit-transition: all 0.275s;
+  transition: all 0.275s;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: "✓";
+  position: absolute;
+  top: 0.525em;
+  left: 0.18em;
+  font-size: 1.375em;
+  color: var(--checkbox-symbol-color);
+  line-height: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(45deg);
+  transform: scale(0) rotate(45deg);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(0);
+  transform: scale(1) rotate(0);
+}
+
+/* Accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  box-shadow: inset 0 1px 3px var(--checkbox-box-checked-shadow-left),
+    0 0 0 6px var(--checkbox-box-checked-shadow-right);
+}
+
+.products,
+.page-header,
+.page-footer {
+  padding: 0 var(--pad-and-gap) 0 var(--pad-and-gap);
+}
+
+.your-products {
+  display: flex;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination .pages {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination .pages li {
+  margin: calc(var(--pad-and-gap) / 2);
+}
+
+.social,
+.legal {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social li {
+  padding: calc(var(--pad-and-gap) / 2);
+  margin: calc(var(--pad-and-gap) / 2);
+}
+
+.legal li {
+  padding: calc(var(--pad-and-gap) / 2);
+  margin: calc(var(--pad-and-gap) / 2);
+}
+
+.copyright {
+  text-align: right;
+}
+
+.page-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+}
+
+.results .product {
+  border: 1px solid #dddddd;
+  padding: 1rem;
+}
