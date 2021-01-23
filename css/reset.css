@@ -12,6 +12,7 @@ html {
   box-sizing: border-box;
   --color-dark-grey: #37352f;
   --color-white: #fff;
+  --color-light-grey: #e1e1e1;
   --checkbox-border-color: #aaa;
   --checkbox-symbol-color: #2910c7;
   --checkbox-box-shadow-left: #0000001a;
