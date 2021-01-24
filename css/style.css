@@ -91,6 +91,17 @@
   margin: calc(var(--pad-and-gap) / 2);
 }
 
+.pagination .pages li a
+{
+  text-decoration: none;
+  font-size: 1em;
+}
+.pagination .pages li a:hover
+{
+  color: black;
+  font-size: 2em;
+}
+
 .social,
 .legal {
   display: flex;
@@ -102,13 +113,24 @@
   margin: calc(var(--pad-and-gap) / 2);
 }
 
+.social li a 
+{
+  text-decoration: none;
+  font-size: 1em;
+  text-align: center;
+}
 .legal li {
   padding: calc(var(--pad-and-gap) / 2);
   margin: calc(var(--pad-and-gap) / 2);
 }
+.legal li a 
+{
+  text-decoration: none;
+}
 
 .copyright {
-  text-align: right;
+  text-align: center;
+  font-size: 1em;
 }
 
 .page-header {
